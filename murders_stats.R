@@ -1,3 +1,4 @@
+
 library(dslabs)
 library(tidyverse)
 library(NHANES)
@@ -14,5 +15,11 @@ filter(murders, rank <= 5)
 my_states <- filter(murders, (region == "Northeast" | region == "West") & rate < 10)
 select(my_states, state, rate)
 
+
 lowestmurders <- filter(murders, rank <= 5)
 lowestmurders %>% dplyr::select(state, rate)
+
+murders %>% ggplot() + geom_point(aes(population/10^6, rate), size=2) + 
+  geom_text(aes(population/10^6, rate, label=abb), nudge_x=1.5)
+
+
