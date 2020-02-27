@@ -13,3 +13,6 @@ filter(murders, rank <= 5)
 #Use select to show only the state name, the rate and the rank
 my_states <- filter(murders, (region == "Northeast" | region == "West") & rate < 10)
 select(my_states, state, rate)
+
+lowestmurders <- filter(murders, rank <= 5)
+lowestmurders %>% dplyr::select(state, rate)
