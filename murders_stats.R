@@ -22,4 +22,4 @@ lowestmurders %>% dplyr::select(state, rate)
 murders %>% ggplot() + geom_point(aes(population/10^6, rate), size=2) + 
   geom_text(aes(population/10^6, rate, label=abb), nudge_x=1.5)
 
-
+#can I add something new here? 
